@@ -1,0 +1,16 @@
+<table class="w-full rounded-lg p-3 border-gray-border" style="box-shadow:  0px 2px 10px rgba(6, 12, 27, 0.1);">
+    <thead class="border-b border-gray-border">   
+        <tr>
+            <th class="text-left py-3 px-3" *ngFor="let column of columns" [ngStyle]="column.style">
+                {{ column.label }}
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of data" class="border border-gray-border">
+            <td *ngFor="let col of columns" class="px-3 py-3" [ngStyle]="col.style">
+                {{ item[col.key] }}
+            </td>
+        </tr>
+    </tbody>
+</table>

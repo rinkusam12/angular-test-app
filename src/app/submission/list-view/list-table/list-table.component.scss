@@ -1,0 +1,11 @@
+.data-col {
+    .checkbox {
+        opacity: 0;
+    }
+
+    &:hover {
+        .checkbox {
+            opacity: 1;
+        }
+    }
+}

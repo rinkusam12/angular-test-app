@@ -1,0 +1,28 @@
+<div class="paginate flex gap-x-2">
+    <button class="nvb" [disabled]="currentPage == 1" (click)="changePage(currentPage - 1)">
+        <mat-icon class="text-disable" fontIcon="chevron_left"></mat-icon>
+    </button>
+
+    <ng-container *ngIf="pages.length > 5 then shrunk else full"></ng-container>
+    <ng-template #full>
+        <ng-container *ngFor="let page of pages">
+            <button [disabled]="page === currentPage" (click)="changePage(page)">
+                {{ page }}
+            </button>
+        </ng-container>
+    </ng-template>
+
+    <ng-template #shrunk>
+        <button [disabled]="currentPage === 1" (click)="changePage(1)">1</button>
+        <button [disabled]="currentPage === 2" (click)="changePage(2)">2</button>
+        <button>
+            <input class="w-full h-full outline-none focus:outline-none active:outline-none" min="3" [max]="pages[pages.length - 3]" (change)="changePageInput($event)" type="number" placeholder="..">
+        </button>
+        <button [disabled]="currentPage === pages[pages.length - 2]" (click)="changePage(pages[pages.length - 2])">{{ pages[pages.length - 2] }}</button>
+        <button [disabled]="currentPage === pages[pages.length - 1]" (click)="changePage(pages[pages.length - 1])">{{ pages[pages.length - 1] }}</button>
+    </ng-template>
+
+    <button class="nvb" [disabled]="currentPage === pages[pages.length - 1]" (click)="changePage(currentPage + 1)">
+        <mat-icon class="text-disable" fontIcon="chevron_right"></mat-icon>
+    </button>
+</div>

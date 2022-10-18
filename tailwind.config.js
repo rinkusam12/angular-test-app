@@ -12,6 +12,7 @@ module.exports = {
         "success": "#53D86A",
         "error": "#FF3D00",
         "disable":"#B8B9BC",
+        "gray-border":"#ECECED"
         
       }
     },

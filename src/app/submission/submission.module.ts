@@ -10,15 +10,22 @@ import { SubmissionService } from './service/submission.service';
 import { SubmissionComponent } from './submission.component';
 import { MapViewComponent } from './map-view/map-view.component';
 import { CardComponent } from './map-view/card/card.component';
+import { ListViewComponent } from './list-view/list-view.component';
+import { ListTableComponent } from './list-view/list-table/list-table.component';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { GoogleMapsModule } from '@angular/google-maps'
+
 
 @NgModule({
-  declarations: [SubmissionComponent, FilterBarComponent, MapViewComponent, CardComponent],
+  declarations: [SubmissionComponent, FilterBarComponent, MapViewComponent, CardComponent, ListViewComponent, ListTableComponent],
   imports: [
     CommonModule,
     MatFormFieldModule,
     MatIconModule,
     MatSelectModule,
     InputModuleModule,
+    MatCheckboxModule,
+    GoogleMapsModule
   ],
   providers: [SubmissionService],
 })

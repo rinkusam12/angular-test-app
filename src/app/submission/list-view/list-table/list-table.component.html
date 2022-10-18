@@ -1,0 +1,40 @@
+<div>
+    <table class="w-full rounded-lg p-3 border-gray-border" style="box-shadow:  0px 2px 10px rgba(6, 12, 27, 0.1);">
+        <thead class="border-b border-gray-border">   
+            <tr>
+                <th class="text-left px-3 py-3">
+                    <app-checkbox></app-checkbox>
+                </th>
+                <th class="text-left py-3 px-3" *ngFor="let column of columns" [ngStyle]="column.style">
+                    {{ column.label }}
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of submissionService.currentData();" class="border border-gray-border hover:bg-[#F1F5F8] data-col">
+                <td class="text-left px-3 py-3 checkbox">
+                    <app-checkbox></app-checkbox>
+                </td>
+                <td *ngFor="let col of columns" class="px-3 py-3" [ngStyle]="col.style">
+                    <div [ngSwitch]="col.key">
+                        <app-pill *ngSwitchCase="'status'" [label]="item[col.key] ?? ''" [statusColor]="getStatus(item[col.key] ?? '')"></app-pill>
+                        <span *ngSwitchCase="'due_date'" [ngClass]="{ 'text-error': getStatus(item.status ?? '') == 'red' }">
+                            {{ item[col.key] | date: 'LLL d, hh:mm a' }}
+                        </span>
+                        <span *ngSwitchDefault>
+                            {{ item[col.key] }}
+                        </span>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="flex mt-11 items-center justify-between">
+        <p>
+            1 - {{ submissionService.size }} of {{ submissionService.data.length }} submissions
+        </p>
+        <div>
+            <app-pagination (pageChanged)="onPageChange($event)" [size]="submissionService.size" [total]="submissionService.data.length" [currentPage]="submissionService.currentPage"></app-pagination>
+        </div>
+    </div>
+</div>

@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-type Status = "green" | "red" | "gray";
+export type StatusColor = "green" | "red" | "gray";
 
 @Component({
   selector: 'app-pill',
@@ -9,7 +9,7 @@ type Status = "green" | "red" | "gray";
 })
 export class PillComponent implements OnInit {
   
-  @Input() statusColor: Status = "gray"; 
+  @Input() statusColor: StatusColor = "gray"; 
   @Input() label: string = ""; 
   constructor() { }
 

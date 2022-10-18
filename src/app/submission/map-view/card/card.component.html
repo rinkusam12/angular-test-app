@@ -1,23 +1,25 @@
-<div class="p-4 border border-disable rounded bg-white card">
-    <h5 class="font-bold text-lg">Work Flow: Requires Location</h5>
+<div class="p-4 border border-disable rounded bg-white card relative">
+    <h5 class="font-bold text-lg">{{ item.task }}</h5>
     <p>
         <span>
             From:
         </span>
-        denisgordiyenya@gmail.com
+        {{ item.from }}
     </p>
     <p>
         <span>
             To:
         </span>
-        denisgordiyenya@gmail.com
+        {{ item.to }}
     </p>
 
     <p class="text-error">
         <span>
             Due Date:
         </span>
-        denisgordiyenya@gmail.com
+        {{ item.due_date | date: 'dd LLL' }}
     </p>
-    <app-pill label="Uncomplete" statusColor="green"></app-pill>
+    <div class="absolute top-4 right-4">
+        <app-pill [label]="item.status || ''" [statusColor]="getStatus(item.status ?? '')"></app-pill>
+    </div>
 </div>

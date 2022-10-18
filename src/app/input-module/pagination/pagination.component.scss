@@ -1,0 +1,8 @@
+.paginate {
+    button {
+        @apply w-8 h-8 border border-disable rounded grid place-items-center disabled:text-primary disabled:border-primary;
+        &.nvb {
+            @apply disabled:bg-gray-border disabled:border-transparent;
+        }
+    }
+}

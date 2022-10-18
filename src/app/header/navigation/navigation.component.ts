@@ -17,27 +17,27 @@ export class NavigationComponent implements OnInit {
     {
       name: 'Customers',
       url: '/forms',
-      icon: 'list',
+      icon: 'group',
     },
     {
       name: 'Submissions',
       url: '/',
-      icon: 'list',
+      icon: 'graphic_eq',
     },
     {
       name: 'History',
       url: '/forms',
-      icon: 'list',
+      icon: 'history',
     },
     {
       name: 'Reports',
       url: '/forms',
-      icon: 'list',
+      icon: 'insert_chart',
     },
     {
       name: 'Workflow',
       url: '/forms',
-      icon: 'list',
+      icon: 'insert_chart',
     },
   ];
 

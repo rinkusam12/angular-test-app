@@ -11,6 +11,9 @@ import { MatInputModule } from '@angular/material/input';
 import { ToggleComponent } from './toggle/toggle.component';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { PillComponent } from './pill/pill.component';
+import { TableComponent } from './table/table.component';
+import { CheckboxComponent } from './checkbox/checkbox.component';
+import { PaginationComponent } from './pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +22,9 @@ import { PillComponent } from './pill/pill.component';
     DatePickerComponent,
     ToggleComponent,
     PillComponent,
+    TableComponent,
+    CheckboxComponent,
+    PaginationComponent,
   ],
   imports: [
     CommonModule,
@@ -35,6 +41,9 @@ import { PillComponent } from './pill/pill.component';
     DatePickerComponent,
     ToggleComponent,
     PillComponent,
+    TableComponent,
+    CheckboxComponent,
+    PaginationComponent
   ],
 })
 export class InputModuleModule {}
