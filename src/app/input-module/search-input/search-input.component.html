@@ -1,0 +1,4 @@
+<div class="input" [ngClass]="{ '!border-primary shadow-sm': active }">
+    <mat-icon class="text-disable mx-2" fontIcon="search"></mat-icon>
+    <input (focus)="active = true" (blur)="active = false" class="outline-none" type="text" placeholder="Search">
+</div>

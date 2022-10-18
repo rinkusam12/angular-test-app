@@ -1,0 +1,8 @@
+<div class="input">
+    <span (click)="picker.open()" class="cursor-pointer inline-flex items-center justify-center">
+        <mat-icon class="text-disable mx-2" fontIcon="date_range"></mat-icon>
+    </span>
+    <input class="outline-none h-full border-none focus:outline-none active:outline-none" matInput [matDatepicker]="picker" placeholder="Choose a date">
+    <mat-datepicker #picker startView="month"></mat-datepicker>
+
+</div>

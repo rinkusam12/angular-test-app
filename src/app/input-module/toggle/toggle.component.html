@@ -1,0 +1,5 @@
+<div class="rounded h-[48px] flex">
+    <button *ngFor="let option of options" (click)="toggleChange(option.value)"  class="option" [ngClass]="{ 'bg-primary border-primary text-white': activeValue === option.value}">
+        {{ option.viewValue }}
+    </button>
+</div>

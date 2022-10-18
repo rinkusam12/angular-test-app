@@ -1,0 +1,15 @@
+<div class="flex justify-between mt-7">
+    <div class="flex gap-x-10">
+        <app-search-input></app-search-input>
+        <app-select-input label="Select Form"></app-select-input>
+        <app-select-input label="Select Status"></app-select-input>
+        <app-date-picker></app-date-picker>
+    </div>
+    <div class="flex items-center gap-x-6">
+        <app-toggle [options]="options" [activeValue]="this.submissionService.activeValue" (toggleValue)="this.submissionService.activeValue = $event"></app-toggle>
+        <div>
+            <button class="inline-flex items-center text-primary">
+                <img src="/assets/export.svg" alt="Export"> Export</button>
+        </div>
+    </div>
+</div>
