@@ -82,8 +82,8 @@ export class MapViewComponent {
 ];
 
   addMarker(event: google.maps.MapMouseEvent) {
-    this.markerPositions.push(event.latLng!.toJSON());
-    console.log(this.markerPositions)
+    // this.markerPositions.push(event.latLng!.toJSON());
+    // console.log(this.markerPositions)
   }
 }
 
