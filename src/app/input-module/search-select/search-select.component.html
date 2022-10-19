@@ -1,0 +1,17 @@
+<div class="input" [ngClass]="{ '!border-primary' : active }">
+    <div (click)="open = !open" class="px-2 relative flex items-center justify-between w-full">
+        <span class="overflow-hidden block whitespace-nowrap w-[85%] text-ellipsis">{{ option ? option.label : label }}</span> 
+        <mat-icon class="text-disable mx-2 absolute right-0" fontIcon="expand_more"></mat-icon>
+    </div>
+    <div *ngIf="open" class="dropdown" [ngClass]="{ 'h-auto': open, 'h-0': !open  }">
+        <button class="py-2 px-2">
+            <input class="px-2 h-full w-full mx-auto border border-disable hover:outline-black focus:outline-primary active:outline-primary" [(ngModel)]="searchQuery" type="text">
+        </button>
+        <button (click)="onDropdownClick('')">
+            {{ label }}
+        </button>
+        <button *ngFor="let opt of filteredOptions()" (click)="onDropdownClick(opt.value)">
+            {{ opt.label }}
+        </button>
+    </div>
+</div>

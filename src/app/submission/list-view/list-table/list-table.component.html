@@ -31,10 +31,10 @@
     </table>
     <div class="flex mt-11 items-center justify-between">
         <p>
-            1 - {{ submissionService.size }} of {{ submissionService.data.length }} submissions
+            1 - {{ submissionService.size }} of {{ submissionService.filterData().length }} submissions
         </p>
         <div>
-            <app-pagination (pageChanged)="onPageChange($event)" [size]="submissionService.size" [total]="submissionService.data.length" [currentPage]="submissionService.currentPage"></app-pagination>
+            <app-pagination (pageChanged)="onPageChange($event)" [size]="submissionService.size" [total]="submissionService.filterData().length" [currentPage]="submissionService.currentPage"></app-pagination>
         </div>
     </div>
 </div>

@@ -1,6 +1,12 @@
-<div class="input" [ngClass]="{ '!border-primary' : active }">
-    <select class="h-full w-full bg-transparent px-2 outline-none" (focus)="active = true" (blur)="active = false">
-        <option value="">{{ label }}</option>
-    </select>
+<div (click)="open = !open" class="input" [ngClass]="{ '!border-primary' : active }">
+    <div class="px-2">{{ option ? option.label : label }}</div>
     <mat-icon class="text-disable mx-2 absolute right-0" fontIcon="expand_more"></mat-icon>
+    <div *ngIf="open" class="dropdown" [ngClass]="{ 'h-auto': open, 'h-0': !open  }">
+        <button (click)="onDropdownClick('')">
+            {{ label }}
+        </button>
+        <button *ngFor="let opt of options" (click)="onDropdownClick(opt.value)">
+            {{ opt.label }}
+        </button>
+    </div>
 </div>

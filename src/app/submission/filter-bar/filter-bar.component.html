@@ -1,8 +1,8 @@
 <div class="flex justify-between mt-7">
     <div class="flex gap-x-10">
-        <app-search-input></app-search-input>
-        <app-select-input label="Select Form"></app-select-input>
-        <app-select-input label="Select Status"></app-select-input>
+        <app-search-input (input)="onSearch($event)"></app-search-input>
+        <app-search-select [value]="this.submissionService.filter.from" (optionChange)="onFromFilter($event)" [options]="fromOptions()" label="Select From"></app-search-select>
+        <app-select-input [value]="this.submissionService.filter.status" (optionChange)="onStatusFilter($event)" [options]="statusOptions" label="Select Status"></app-select-input>
         <app-date-picker></app-date-picker>
     </div>
     <div class="flex items-center gap-x-6">

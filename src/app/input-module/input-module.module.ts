@@ -14,6 +14,8 @@ import { PillComponent } from './pill/pill.component';
 import { TableComponent } from './table/table.component';
 import { CheckboxComponent } from './checkbox/checkbox.component';
 import { PaginationComponent } from './pagination/pagination.component';
+import { FormsModule } from '@angular/forms';
+import { SearchSelectComponent } from './search-select/search-select.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,7 @@ import { PaginationComponent } from './pagination/pagination.component';
     TableComponent,
     CheckboxComponent,
     PaginationComponent,
+    SearchSelectComponent,
   ],
   imports: [
     CommonModule,
@@ -34,6 +37,7 @@ import { PaginationComponent } from './pagination/pagination.component';
     MatNativeDateModule,
     MatInputModule,
     MatButtonToggleModule,
+    FormsModule,
   ],
   exports: [
     SearchInputComponent,
@@ -43,7 +47,8 @@ import { PaginationComponent } from './pagination/pagination.component';
     PillComponent,
     TableComponent,
     CheckboxComponent,
-    PaginationComponent
+    PaginationComponent,
+    SearchSelectComponent
   ],
 })
 export class InputModuleModule {}

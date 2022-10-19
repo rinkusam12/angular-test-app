@@ -15,7 +15,7 @@
     .dropdown {
       @apply overflow-hidden absolute top-[46px] left-0 w-full text-left shadow-md grid border border-disable border-t-0 z-10 bg-white;
       button {
-        @apply h-[48px] inline-flex items-center px-2 w-full text-left text-sm text-gray-700 hover:bg-slate-500 hover:bg-opacity-25;
+        @apply h-[48px] border-b border-disable overflow-hidden whitespace-nowrap text-ellipsis inline-flex items-center px-2 w-full text-left text-sm text-gray-700 hover:bg-slate-500 hover:bg-opacity-25;
       }
     }
   }
