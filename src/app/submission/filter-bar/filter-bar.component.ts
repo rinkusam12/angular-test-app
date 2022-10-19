@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import csvDownload from 'json-to-csv-export';
 import { CsvServiceService } from 'src/app/csv-service.service';
 import { SubmissionService } from '../service/submission.service';
 
@@ -37,9 +38,10 @@ export class FilterBarComponent {
   searchQuery: string = '';
 
   // activeValue = 'map';
-  constructor(public submissionService: SubmissionService, private csvService: CsvServiceService) {}
-
-  
+  constructor(
+    public submissionService: SubmissionService,
+    private csvService: CsvServiceService
+  ) {}
 
   onSearch(event: Event) {
     this.submissionService.filter.task = (
@@ -48,12 +50,12 @@ export class FilterBarComponent {
   }
 
   fromOptions() {
-    return this.submissionService.data.map(c=>{
+    return this.submissionService.data.map((c) => {
       return {
         value: c.from,
-        label: c.from
-      }
-    })
+        label: c.from,
+      };
+    });
   }
 
   onStatusFilter(value: string) {
@@ -64,6 +66,11 @@ export class FilterBarComponent {
     this.submissionService.filter.from = value.trim();
   }
   dowloadCsv() {
-    this.csvService.downloadFile(this.submissionService.filterData(), 'data');
+    // csvDownload({
+    //   data: this.submissionService.filterData(),
+    //   filename: 'data',
+    //   headers: ['task', 'status', 'from', 'to'],
+    // });
+    // this.csvService.downloadFile(this.submissionService.filterData(), 'data');
   }
 }

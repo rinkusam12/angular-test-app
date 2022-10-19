@@ -42,8 +42,7 @@ export class SubmissionService {
     return filterData.slice(start, this.currentPage * this.size).map(c=>{
       return {
         ...c,
-        status: c.status as Data['status'],
-        address: c.street + ', ' + c.city + ', ' + c.state + ', ' + c.postal_code
+        status: c.status as Data['status']
       }
     })
   }
