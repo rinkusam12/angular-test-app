@@ -66,11 +66,11 @@ export class FilterBarComponent {
     this.submissionService.filter.from = value.trim();
   }
   dowloadCsv() {
-    // csvDownload({
-    //   data: this.submissionService.filterData(),
-    //   filename: 'data',
-    //   headers: ['task', 'status', 'from', 'to'],
-    // });
+    csvDownload({
+      data: this.submissionService.filterData(),
+      filename: 'data',
+      headers: ['task', 'status', 'from', 'to'],
+    });
     // this.csvService.downloadFile(this.submissionService.filterData(), 'data');
   }
 }
