@@ -3,10 +3,17 @@
         <app-card *ngFor="let item of submissionService.currentData()" [item]="item"></app-card>
     </div>
     <div class="grid col-span-8 bg-blue-400 bg-opacity-30">
-        <google-map class="h-full w-full">
-            <map-marker icon="" *ngFor="let markerPosition of markerPositions"
-            [position]="markerPosition"
-            [options]="markerOptions"></map-marker>
-        </google-map>
+        <google-map height="100%"
+        width="100%"
+        [center]="center"
+
+        [zoom]="zoom"
+        (mapClick)="addMarker($event)">
+<map-marker icon="/assets/icon.svg" *ngFor="let markerPosition of markerPositions"
+          [position]="markerPosition"
+          [options]="markerOptions">
+            Position Here
+        </map-marker>
+</google-map>
     </div>
 </div>

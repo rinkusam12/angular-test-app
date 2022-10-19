@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CsvServiceService } from 'src/app/csv-service.service';
 import { SubmissionService } from '../service/submission.service';
 
 @Component({
@@ -36,7 +37,7 @@ export class FilterBarComponent implements OnInit {
   searchQuery: string = '';
 
   // activeValue = 'map';
-  constructor(public submissionService: SubmissionService) {}
+  constructor(public submissionService: SubmissionService, private csvService: CsvServiceService) {}
 
   ngOnInit(): void {}
 
@@ -61,5 +62,8 @@ export class FilterBarComponent implements OnInit {
 
   onFromFilter(value: string) {
     this.submissionService.filter.from = value.trim();
+  }
+  dowloadCsv() {
+    this.csvService.downloadFile(this.submissionService.filterData(), 'data');
   }
 }

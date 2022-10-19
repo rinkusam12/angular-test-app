@@ -8,7 +8,7 @@
     <div class="flex items-center gap-x-6">
         <app-toggle [options]="options" [activeValue]="this.submissionService.activeValue" (toggleValue)="this.submissionService.activeValue = $event"></app-toggle>
         <div>
-            <button class="inline-flex items-center text-primary">
+            <button class="inline-flex items-center text-primary" (click)="dowloadCsv()">
                 <img src="/assets/export.svg" alt="Export"> Export</button>
         </div>
     </div>
