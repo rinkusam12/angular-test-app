@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output } from '@angular/core';
 
 
 interface Option {
@@ -9,7 +9,7 @@ interface Option {
   templateUrl: './select-input.component.html',
   styleUrls: ['./select-input.component.scss']
 })
-export class SelectInputComponent implements OnInit, OnChanges {
+export class SelectInputComponent implements OnChanges {
   active = false
   constructor() { }
   
@@ -30,8 +30,7 @@ export class SelectInputComponent implements OnInit, OnChanges {
 
   option: Option | undefined;
 
-  ngOnInit(): void {
-  }
+
 
   ngOnChanges() {
     console.log(this.value);

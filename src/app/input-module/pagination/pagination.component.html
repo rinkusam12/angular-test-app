@@ -1,5 +1,5 @@
 <div class="paginate flex gap-x-2">
-    <button class="nvb" [disabled]="currentPage == 1" (click)="changePage(currentPage - 1)">
+    <button class="nvb" [disabled]="currentPage === 1" (click)="changePage(currentPage - 1)">
         <mat-icon class="text-disable" fontIcon="chevron_left"></mat-icon>
     </button>
 

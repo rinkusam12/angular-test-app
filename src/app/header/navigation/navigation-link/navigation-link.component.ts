@@ -13,14 +13,13 @@ interface NavLink {
   templateUrl: './navigation-link.component.html',
   styleUrls: ['./navigation-link.component.scss']
 })
-export class NavigationLinkComponent implements OnInit {
+export class NavigationLinkComponent {
 
   constructor() { }
 
   
   @Input() link: NavLink = {} as NavLink;  
 
-  ngOnInit(): void {
-  }
+
 
 }

@@ -1,6 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { PillComponent } from 'src/app/input-module/pill/pill.component';
-import { Column } from 'src/app/input-module/table/table.component';
+import { Component } from '@angular/core';
 import { SubmissionService } from '../service/submission.service';
 
 @Component({
@@ -8,11 +6,9 @@ import { SubmissionService } from '../service/submission.service';
   templateUrl: './list-view.component.html',
   styleUrls: ['./list-view.component.scss']
 })
-export class ListViewComponent implements OnInit {
+export class ListViewComponent {
 
   constructor(public submissionService: SubmissionService) { }
   
-  ngOnInit(): void {
-  }
-
+ 
 }

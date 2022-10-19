@@ -18,7 +18,7 @@
                 <td *ngFor="let col of columns" class="px-3 py-3" [ngStyle]="col.style">
                     <div [ngSwitch]="col.key">
                         <app-pill *ngSwitchCase="'status'" [label]="item[col.key] ?? ''" [statusColor]="getStatus(item[col.key] ?? '')"></app-pill>
-                        <span *ngSwitchCase="'due_date'" [ngClass]="{ 'text-error': getStatus(item.status ?? '') == 'red' }">
+                        <span *ngSwitchCase="'due_date'" [ngClass]="{ 'text-error': getStatus(item.status ?? '') === 'red' }">
                             {{ item[col.key] | date: 'LLL d, hh:mm a' }}
                         </span>
                         <span *ngSwitchDefault>

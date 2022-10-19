@@ -7,7 +7,7 @@ import { SubmissionService } from '../service/submission.service';
   templateUrl: './filter-bar.component.html',
   styleUrls: ['./filter-bar.component.scss'],
 })
-export class FilterBarComponent implements OnInit {
+export class FilterBarComponent {
   options = [
     {
       value: 'map',
@@ -39,7 +39,7 @@ export class FilterBarComponent implements OnInit {
   // activeValue = 'map';
   constructor(public submissionService: SubmissionService, private csvService: CsvServiceService) {}
 
-  ngOnInit(): void {}
+  
 
   onSearch(event: Event) {
     this.submissionService.filter.task = (

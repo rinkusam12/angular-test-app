@@ -5,11 +5,10 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './checkbox.component.html',
   styleUrls: ['./checkbox.component.scss']
 })
-export class CheckboxComponent implements OnInit {
+export class CheckboxComponent{
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+ 
 
 }

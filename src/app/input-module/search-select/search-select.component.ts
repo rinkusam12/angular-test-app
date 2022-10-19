@@ -10,7 +10,7 @@ interface Option {
   templateUrl: './search-select.component.html',
   styleUrls: ['./search-select.component.scss']
 })
-export class SearchSelectComponent implements OnInit {
+export class SearchSelectComponent implements OnChanges {
 
   active = false
   constructor() { }
@@ -39,8 +39,7 @@ export class SearchSelectComponent implements OnInit {
     return this.searchQuery ? this.options.filter((option) => option.value.toLowerCase().includes(this.searchQuery.toLowerCase())).slice(0, 10) : this.options.slice(0, 10);
   }
 
-  ngOnInit(): void {
-  }
+  
 
   ngOnChanges() {
     // console.log(this.value);

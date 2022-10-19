@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { StatusColor } from 'src/app/input-module/pill/pill.component';
 import { Data, Status } from '../../service/mock_data';
 
@@ -7,7 +7,7 @@ import { Data, Status } from '../../service/mock_data';
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss']
 })
-export class CardComponent implements OnInit {
+export class CardComponent  {
   constructor() { }
   
   @Input() item: Data = {
@@ -21,9 +21,6 @@ export class CardComponent implements OnInit {
     address: ''
 
   };
-  
-  ngOnInit(): void {
-  }
 
   getStatus(status: string): StatusColor {
     switch (status as Status) {

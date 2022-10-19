@@ -5,11 +5,11 @@ import { SubmissionService } from '../service/submission.service';
   templateUrl: './map-view.component.html',
   styleUrls: ['./map-view.component.scss']
 })
-export class MapViewComponent implements OnInit {
+export class MapViewComponent {
 
   constructor(public submissionService: SubmissionService) { }
 
-  ngOnInit(): void {}
+  
 
   center: google.maps.LatLngLiteral = {lat: 34.3, lng: -118.2437};
   zoom = 16;

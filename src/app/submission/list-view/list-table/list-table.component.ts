@@ -1,5 +1,5 @@
 import { NgStyle } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { StatusColor } from 'src/app/input-module/pill/pill.component';
 import { Data, Status } from '../../service/mock_data';
 import { SubmissionService } from '../../service/submission.service';
@@ -20,7 +20,7 @@ export interface Column {
   templateUrl: './list-table.component.html',
   styleUrls: ['./list-table.component.scss']
 })
-export class ListTableComponent implements OnInit {
+export class ListTableComponent {
 
   constructor(public submissionService: SubmissionService) { }
 
@@ -53,8 +53,6 @@ export class ListTableComponent implements OnInit {
 
   ]
 
-  ngOnInit(): void {
-  }
 
   getStatus(status: string): StatusColor {
     switch (status as Status) {

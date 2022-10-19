@@ -5,11 +5,10 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './date-picker.component.html',
   styleUrls: ['./date-picker.component.scss']
 })
-export class DatePickerComponent implements OnInit {
+export class DatePickerComponent {
 
   constructor() { }
   active = false;
-  ngOnInit(): void {
-  }
+ 
 
 }

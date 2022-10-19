@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { SubmissionService } from './service/submission.service';
 
 @Component({
@@ -6,11 +6,9 @@ import { SubmissionService } from './service/submission.service';
   templateUrl: './submission.component.html',
   styleUrls: ['./submission.component.scss']
 })
-export class SubmissionComponent implements OnInit {
+export class SubmissionComponent {
 
   constructor(public submissionService: SubmissionService) { }
 
-  ngOnInit(): void {
-  }
 
 }

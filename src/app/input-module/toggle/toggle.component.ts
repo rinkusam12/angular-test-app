@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 interface Option {
   value: string;
@@ -10,14 +10,14 @@ interface Option {
   templateUrl: './toggle.component.html',
   styleUrls: ['./toggle.component.scss'],
 })
-export class ToggleComponent implements OnInit {
+export class ToggleComponent {
   @Input() activeValue: string = '';
   @Input() options: Option[] = [];
   @Output() toggleValue: EventEmitter<string> = new EventEmitter();
 
   constructor() {}
 
-  ngOnInit(): void {}
+ 
 
   toggleChange(value: string) {
     console.log('value', value);
