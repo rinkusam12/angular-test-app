@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Data, mockData } from './mock_data'
+import { Data, mockData, Status } from './mock_data'
 @Injectable({
   providedIn: 'root',
 })
@@ -26,6 +26,12 @@ export class SubmissionService {
         (this.filter.from ? item.from.includes(this.filter.from)  : true) &&
         (this.filter.status ? item.status?.includes(this.filter.status) : true)
       );
+    }).map(c=>{
+      return {
+        ...c,
+        address: c.street + ', ' + c.city + ', ' + c.state + ', ' + c.postal_code,
+        status: c.status as Data['status'] || Status.Unassigned
+      }
     });
     return filterData;
   }
